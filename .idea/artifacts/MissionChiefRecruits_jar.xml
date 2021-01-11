@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MissionChiefRecruits:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MissionChiefRecruits_jar</output-path>
+    <root id="archive" name="MissionChiefRecruits.jar">
+      <element id="module-output" name="MissionChiefRecruits" />
+    </root>
+  </artifact>
+</component>
