@@ -5,7 +5,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -13,12 +12,10 @@ import static me.lotus.missionchiefrecruiter.Messages.*;
 
 public class LoginForm {
 
-
     static String loginurl = LoginFormData.loginformurl;
 
     public static void loginForm() throws IOException {
         Scanner scanner = new Scanner(System.in);
-
 
         System.out.println(username);
         LoginFormData.username = scanner.nextLine();
