@@ -13,6 +13,7 @@ import static me.lotus.missionchiefrecruiter.Messages.*;
 
 public class LoginForm {
 
+
     static String loginurl = LoginFormData.loginformurl;
 
     public static void loginForm() throws IOException {
