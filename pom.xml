@@ -29,6 +29,16 @@
             <version>1.13.1</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.webdriver/webdriver-parent -->
+        <dependency>
+            <groupId>org.seleniumhq.webdriver</groupId>
+            <artifactId>webdriver-parent</artifactId>
+            <version>0.9.7376</version>
+            <type>pom</type>
+        </dependency>
+
+
+
     </dependencies>
 
     <build>

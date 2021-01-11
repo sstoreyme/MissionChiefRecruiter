@@ -21,15 +21,12 @@ public class LoginForm {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println(USERNAME_PROMPT);
-
         String username = scanner.nextLine();
 
         System.out.println(PASSWORD_PROMPT);
-
         String password = scanner.nextLine();
 
         scanner.close();
-
         System.out.println(LOGGING_IN_MESSAGE);
 
         return getLoginDataFromMissionChief(username, password);
@@ -47,6 +44,7 @@ public class LoginForm {
 
         Elements authToken = document.select("#new_user > div:nth-child(1) > input[type=hidden]:nth-child(2)");
         System.out.println("Auth token: " + authToken.val());
+        Elements loginbtn = document.select("#new_user > input");
 
         String authenticity = authToken.val();
 
