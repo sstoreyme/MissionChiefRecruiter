@@ -1,17 +1,28 @@
 package me.lotus.missionchiefrecruiter;
 
 import me.lotus.missionchiefrecruiter.actions.LoginForm;
+import me.lotus.missionchiefrecruiter.data.LoginFormData;
 
 import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args){
+    public Main() {
+    }
+
+    public LoginFormData buildLoginFormData() {
+        LoginForm loginForm = new LoginForm();
         try {
-            LoginForm.loginForm();
+            return loginForm.loginForm();
         } catch (IOException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
+        return null;
+    }
+
+    public static void main(String[] args) {
+        Main main = new Main();
+        LoginFormData data = main.buildLoginFormData();
     }
 
 }
