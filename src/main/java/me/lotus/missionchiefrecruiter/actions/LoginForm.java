@@ -7,8 +7,13 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.IOException;
+import java.sql.Driver;
 import java.util.Scanner;
 
 import static me.lotus.missionchiefrecruiter.constants.Messages.*;
@@ -19,6 +24,7 @@ public class LoginForm {
 
     public LoginFormData loginForm() throws IOException {
         Scanner scanner = new Scanner(System.in);
+        WebDriver driver = new ChromeDriver();
 
         System.out.println(USERNAME_PROMPT);
         String username = scanner.nextLine();
@@ -28,6 +34,13 @@ public class LoginForm {
 
         scanner.close();
         System.out.println(LOGGING_IN_MESSAGE);
+        driver.findElement(By.xpath("#new_user > input")).click();
+
+        if(driver.getCurrentUrl() == URLs.HOMEPAGE_URL){
+            System.out.println("success");
+        } else {
+            System.out.println("Fail");
+        }
 
         return getLoginDataFromMissionChief(username, password);
     }
@@ -44,7 +57,6 @@ public class LoginForm {
 
         Elements authToken = document.select("#new_user > div:nth-child(1) > input[type=hidden]:nth-child(2)");
         System.out.println("Auth token: " + authToken.val());
-        Elements loginbtn = document.select("#new_user > input");
 
         String authenticity = authToken.val();
 
